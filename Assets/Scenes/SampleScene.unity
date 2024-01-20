@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17511049, g: 0.21907197, b: 0.3013715, a: 1}
+  m_IndirectSpecularColor: {r: 0.17511037, g: 0.2190717, b: 0.30137107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2212,6 +2212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dd61a04199b664bbb2569433e8aa5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    Prefab: {fileID: 7904552091271370020, guid: 8c9dc90467401d048b2a4442ef42d887, type: 3}
+    cost: 100
+  missileLauncher:
+    Prefab: {fileID: 1726453955747796138, guid: 0de2f9d3d8dd65c4386a226ac3503f87, type: 3}
+    cost: 250
 --- !u!4 &290057227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4584268593102286353, guid: 9edb6933af8f76049bd112a18de4f8a4, type: 3}
@@ -7573,6 +7579,7 @@ GameObject:
   - component: {fileID: 931156157}
   - component: {fileID: 931156156}
   - component: {fileID: 931156158}
+  - component: {fileID: 931156159}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -7625,6 +7632,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 7904552091271370020, guid: 8c9dc90467401d048b2a4442ef42d887, type: 3}
   missileLauncherPrefab: {fileID: 1726453955747796138, guid: 0de2f9d3d8dd65c4386a226ac3503f87, type: 3}
+--- !u!114 &931156159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931156155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9275d1700774dc0b981f9993dd0d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1001 &932054621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11576,7 +11596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303065373592531727, guid: a9b77f0a9037cc941a27cd1d9906309b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMissileLauncher
+      value: SelectMissileLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 1303065373592531727, guid: a9b77f0a9037cc941a27cd1d9906309b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -16238,7 +16258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303065373592531727, guid: a9b77f0a9037cc941a27cd1d9906309b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseStandardTurret
+      value: SelectStandardTurret
       objectReference: {fileID: 0}
     - target: {fileID: 1303065373592531727, guid: a9b77f0a9037cc941a27cd1d9906309b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
