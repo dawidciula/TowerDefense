@@ -10,7 +10,7 @@ public class BuildManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("Wiï¿½cej niï¿½ jeden BuildManager na scenie!");
+            Debug.LogError("Wiêcej ni¿ jeden BuildManager na scenie!");
         }
         instance = this;
 
@@ -21,26 +21,33 @@ public class BuildManager : MonoBehaviour
 
     private TurretBlueprint turretToBuild;
 
-    public bool CanBuild { get { return turretToBuild != null; } }
 
-    public void BuildTurretOn(Node node)
+    public bool CanBuild
+    {
+        get { return turretToBuild != null; }
+    }
+
+
+    public void BuildTurretOn (Node node)
     {
         if (PlayerStats.Money < turretToBuild.cost)
         {
-            Debug.Log("NiewystarczajÄ…co pieniÄ™dzy!");
+            Debug.Log("Niewystarcz¹jaco pieniêdzy!");
             return;
         }
 
         PlayerStats.Money -= turretToBuild.cost;
 
-        GameObject turret = (GameObject)Instantiate(turretToBuild.Prefab, node.GetBuildPosition(), Quaternion.identity);
+
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
         node.turret = turret;
 
-        Debug.Log("Wieyczka postawiona! ZostaÅ‚o pieniÄ™dzy: " + PlayerStats.Money);
+        Debug.Log("Wie¿a zbudowana! Pieniêdzy zosta³o: " + PlayerStats.Money);
     }
 
-    public void SelectTurretToBuild(TurretBlueprint turrent)
+
+    public void SelectTurretToBuild(TurretBlueprint turret)
     {
-        turretToBuild = turrent;
+        turretToBuild = turret;
     }
 }

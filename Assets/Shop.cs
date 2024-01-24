@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
-    public TurretBlueprint missileLauncher; 
+    public TurretBlueprint missleLauncher;
+
 
     BuildManager buildManager;
 
@@ -16,13 +17,13 @@ public class Shop : MonoBehaviour
 
     public void SelectStandardTurret()
     {
-        Debug.Log("Standard Turret Selected");
+        Debug.Log("Standard Turret");
         buildManager.SelectTurretToBuild(standardTurret);
     }
 
     public void SelectMissileLauncher()
     {
-        Debug.Log("Missile Launcher Selected");
-        buildManager.SelectTurretToBuild(missileLauncher);
+        Debug.Log("Missile Launcher");
+        buildManager.SelectTurretToBuild(missleLauncher);
     }
 }

@@ -6,7 +6,7 @@ public class Node : MonoBehaviour
 {
     public Color hoverColor;
     public Vector3 positionOffset;
-    [Header("Optional")]
+    [Header("Opcjonalnie")]
     public GameObject turret;
 
     private Renderer rend;
@@ -22,20 +22,19 @@ public class Node : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public Vector3 GetBuildPosition ()
+    public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffset;
     }
 
     void OnMouseDown()
     {
-
         if (!buildManager.CanBuild)
             return;
 
         if(turret != null)
         {
-            Debug.Log("Nie moï¿½esz tu budowaï¿½!");
+            Debug.Log("Nie mo¿esz tu budowaæ!");
             return;
         }
 
